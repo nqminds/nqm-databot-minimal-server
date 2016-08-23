@@ -1,0 +1,19 @@
+{
+  "name": "npm-process-minimal-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "toby.ealden@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta5"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "pug-lint": "^2.3.0"
+  }
+}
