@@ -26,7 +26,7 @@ app.get("/json", security.ensureAuthenticated, function(req,res) {
 
 app.listen(commandLine.port, function() {
     log("listening on %d", commandLine.port);
-    output.write(output.PROGRESS, 0);
+    output.progress(0);
   })
   .on("error", function(err) {
     log("failure listening on port %d [%s]", commandLine.port, err.message);
