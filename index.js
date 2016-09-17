@@ -4,8 +4,8 @@
   }
 
   var express = require("express");
-  var input = require("nqm-process-utils").input;
-  var security = require("nqm-process-utils").security;
+  var input = require("nqm-databot-utils").input;
+  var security = require("nqm-databot-utils").security;
 
   function databot(input, output, context) {
     //
