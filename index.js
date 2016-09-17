@@ -30,7 +30,7 @@
     app.use(express.static("public"));
 
     // Make sure all requests originate from the host.
-    app.use(security.authoriseRequest(inputArgs.instanceAuthKey));
+    app.use(security.authoriseRequest(context.instanceAuthKey));
 
     // Example view rendering.
     app.get("/home", function(req,res) {
@@ -57,12 +57,12 @@
     });
 
     // Use the port supplied to us by the process host.
-    app.listen(inputArgs.instancePort, function() {
-      output.debug("listening on %d", inputArgs.instancePort);
+    app.listen(context.instancePort, function() {
+      output.debug("listening on %d", context.instancePort);
       output.progress(0);
     })
     .on("error", function(err) {
-      output.error("unable to start server on port %d [%s]", inputArgs.instancePort, err.message);
+      output.error("unable to start server on port %d [%s]", context.instancePort, err.message);
       process.exit(-1);
     })
     .on("connection", security.authoriseConnection);
