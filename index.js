@@ -38,6 +38,12 @@
       res.render("home", {title: input.title || "server process", message: input.message || "hello"});
     });
 
+    // Example view rendering.
+    app.get("/about", function(req,res) {
+      // Respond with the title and message passed as input to this databot
+      res.render("about", {title: input.title || "server process", message: input.message || "hello"});
+    });
+
     // Example json response.
     app.get("/json", function(req,res) {
       res.json({
