@@ -33,7 +33,7 @@
     app.use(security.authoriseRequest(context.instanceAuthKey));
 
     // Example view rendering.
-    app.get("/home", function(req,res) {
+    app.get("/", function(req,res) {
       // Respond with the title and message passed as input to this databot
       res.render("home", {title: input.title || "server process", message: input.message || "hello"});
     });
