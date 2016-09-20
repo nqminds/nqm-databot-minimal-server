@@ -1,12 +1,13 @@
-html
-  head
-    title= title
-    link(href="style.css" rel="stylesheet")
-    script(src="https://code.jquery.com/jquery-3.1.0.min.js")    
-    script.
-      $(function() {
-      })
-  body
-    h1= message
-    p about this server
-    p this is nqm-databot-minimal-server
+extends layout
+
+block content
+  #index-banner.section.no-pad-bot
+    .container
+      br
+      br
+      h1.header.center.orange-text about
+      .row.center
+        h5.header.col.s12.light #{title + " " + message}
+      .row.center
+      br
+      br

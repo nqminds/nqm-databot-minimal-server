@@ -16,10 +16,10 @@
     // {
     //   title: "<title here>",
     //   message: "<message here>",
-    //   answer: "<answer here>"
+    //   logo: "<logo here>"
     // }
     //
-    if (!input.title || !input.message || !input.answer) {
+    if (!input.title || !input.message || !input.logo) {
       output.error("invalid args");
       process.exit(1);
     }
@@ -35,19 +35,18 @@
     // Example view rendering.
     app.get("/", function(req,res) {
       // Respond with the title and message passed as input to this databot
-      res.render("home", {title: input.title || "server process", message: input.message || "hello"});
+      res.render("home", input);
     });
 
     // Example view rendering.
     app.get("/about", function(req,res) {
       // Respond with the title and message passed as input to this databot
-      res.render("about", {title: input.title || "server process", message: input.message || "hello"});
+      res.render("about", input);
     });
 
     // Example json response.
     app.get("/json", function(req,res) {
       res.json({
-        answer: input.answer || 123,
         message: "testing JSON response type"
       });
     });
@@ -73,6 +72,9 @@
     })
     .on("connection", security.authoriseConnection);
   }
+
+  // var output = require("nqm-databot-utils").output;
+  // databot({title:"hello", logo: "my app", message:"world"}, output, { instancePort: 3111});
 
   // Retrieve the input data sent to us from the host, and pipe it to the databot function.
   input.pipe(databot);
