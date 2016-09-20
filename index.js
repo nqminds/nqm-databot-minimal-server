@@ -16,13 +16,16 @@
     // {
     //   title: "<title here>",
     //   message: "<message here>",
-    //   logo: "<logo here>"
+    //   logo: "<logo here>",
+    //   colour: "<colour here>"
     // }
     //
     if (!input.title || !input.message || !input.logo) {
       output.error("invalid args");
       process.exit(1);
     }
+
+    input.colour = input.colour || "light-blue";
 
     // Create and initialise an express server.
     var app = express();
